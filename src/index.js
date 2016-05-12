@@ -6,7 +6,7 @@ import Converter from './components/converter'
 
 render((
     <Router history={browserHistory}>
-        <Route path="/v2/build" component={App}>
+        <Route path="/" component={App}>
             <IndexRoute component={Converter} />
         </Route>
     </Router>
