@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production webpack -p",
     "postbuild": "npm run copy",
     "clean": "rimraf build",
-    "copy": "cp -r public/* build"
+    "copy": "cp -r public/* build && surge ./build --domain v2.duri.me"
   },
   "author": "Riccardo Bartoli <info@rblab.com> (http://rblab.com/)",
   "repository": {
