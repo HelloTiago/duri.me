@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-h1 {
+.converterHeading {
   text-align: center;
   margin-top: 0;
   font-weight: 500;
@@ -25,15 +25,20 @@ h1 {
   font-size: 20px;
 }
 
-p {
+.converterText {
   color: #8492a6;
   text-align: center;
 }
 
-img {
+.dropImg {
   width: 160px;
   display: block;
   margin: 30px auto 0;
+}
+
+.buttonGroup {
+  display: flex;
+  margin: 40px auto 0;
 }
 
 button {
@@ -42,10 +47,18 @@ button {
   background-color: #1fb6ff;
   border: 0;
   height: 50px;
-  border-radius: 4px;
   padding: 0 25px;
   font-size: 16px;
   color: #fff;
-  margin: 40px auto 0;
   cursor: pointer;
+
+  &:first-child {
+    border-radius: 4px 0 0 4px;
+    border-right: 1px solid #fff;
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #fff;
+  }
 }
