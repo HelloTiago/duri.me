@@ -11,7 +11,8 @@ class Converter extends Component {
         this.state = {
             dataURI: null,
             width: null,
-            height: null
+            height: null,
+            files: [],
         }
 
         this.handleDrop = this.handleDrop.bind(this)
@@ -21,6 +22,11 @@ class Converter extends Component {
     }
 
     handleDrop(files) {
+
+        this.setState({
+            files: files
+        })
+
         files.forEach((file)=> {
             var reader = new window.FileReader()
             reader.readAsDataURL(file)
@@ -39,9 +45,10 @@ class Converter extends Component {
     }
 
     handleDataURIClick() {
-        clipboard.copy({
-            'text/plain': this.state.dataURI
-        })
+        clipboard.copy(this.state.dataURI).then(
+          function() { console.log('success') },
+          function(err) { console.log('failure', err) }
+        )
     }
 
     handleCSSClick() {
@@ -51,13 +58,17 @@ class Converter extends Component {
                 . height: ${this.state.height}px;
                 . background-repeat: no-repeat;
                 . background-image: url(${this.state.dataURI});`
-        })
+        }).then(
+          function() { console.log('success') },
+          function(err) { console.log('failure', err) }
+        )
     }
 
     handleHTMLClick() {
-        clipboard.copy({
-            'text/plain': '<img width="' + this.state.width + '" height="' + this.state.height + '" title="" alt="" src="' + this.state.dataURI + '">'
-        })
+        clipboard.copy('<img width="' + this.state.width + '" height="' + this.state.height + '" title="" alt="" src="' + this.state.dataURI + '">').then(
+          function() { console.log('success') },
+          function(err) { console.log('failure', err) }
+        )
     }
 
     render() {
@@ -66,7 +77,12 @@ class Converter extends Component {
                 <Dropzone onDrop={this.handleDrop} className={styles.dropzone} multiple={false}>
                     <h1 className={styles.converterHeading}>Drop your file here</h1>
                     <p className={styles.converterText}>Or click to select one. No files are uploaded. </p>
-                    <img className={styles.dropImg} src={require('./drop.svg')}/>
+                    {this.state.files.length > 0 && this.state.files.map((file, i) =>
+                        <img className={styles.droppedImg} key={i} src={file.preview} />
+                    )}
+                    {this.state.files.length <= 0 &&
+                        <img className={styles.dropImg} src={require('./drop.svg')}/>
+                    }
                 </Dropzone>
                 {this.state.dataURI &&
                     <div className={styles.buttonGroup}>

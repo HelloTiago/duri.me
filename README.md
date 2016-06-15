@@ -1,12 +1,11 @@
-# React boilerplate
-A boilerplate to start a client-side project using React.
+# Duri.me
+A simple tool that allows you to convert images to DataURIs.
 
 ## Features
 - [ES2015](https://babeljs.io/docs/learn-es2015)
 - [React](https://github.com/facebook/react)
 - [React Router](https://github.com/reactjs/react-router)
 - [CSS modules](https://github.com/css-modules/css-modules)
-- [SASS]() support using [node-sass](https://github.com/sass/node-sass)
 
 ## Tools
 - [Webpack](https://github.com/webpack/webpack)
@@ -20,14 +19,9 @@ A boilerplate to start a client-side project using React.
     - use Babel 6 as parser using [babel-eslint](https://github.com/babel/babel-eslint)
     - lint page on save using [eslint-loader](https://github.com/MoOx/eslint-loader)
 
-## Hot Module Replacement (HMR) in action
-![ScreenShot](https://cloud.githubusercontent.com/assets/983189/12616751/91833172-c504-11e5-87e9-f36efbd1d17c.gif)
-
-As you can see the HMR is working without reloading the page for React components and styles.
-
 ## Getting started
 ```bash
-$ git clone https://github.com/rbartoli/react-boilerplate.git
+$ git clone https://github.com/hellotiago/duri.me.git
 $ npm i # shortcut for npm install
 $ npm start
 ```
