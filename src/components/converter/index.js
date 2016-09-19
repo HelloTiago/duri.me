@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
-import clipboard from 'clipboard-js'
+import copy from 'copy-to-clipboard'
 import styles from './converter.scss'
 
 class Converter extends Component {
@@ -13,6 +13,7 @@ class Converter extends Component {
             width: null,
             height: null,
             files: [],
+            isFinished: false
         }
 
         this.handleDrop = this.handleDrop.bind(this)
@@ -44,39 +45,52 @@ class Converter extends Component {
         })
     }
 
+    startTimer() {
+        this._timer != null ? clearTimeout(this._timer) : null
+
+        this._timer = setTimeout(function() {
+            this.setState({
+                isFinished: false
+            })
+            this._timer = null
+        }.bind(this), 2000)
+    }
+
     handleDataURIClick() {
-        clipboard.copy(this.state.dataURI).then(
-          function() { console.log('success') },
-          function(err) { console.log('failure', err) }
-        )
+        copy(this.state.dataURI)
+        this.setState({
+            isFinished: true
+        })
+        this.startTimer()
     }
 
     handleCSSClick() {
-        clipboard.copy({
-            'text/plain': removeLeadingWhitespace`.
-                . width: ${this.state.width}px;
-                . height: ${this.state.height}px;
-                . background-repeat: no-repeat;
-                . background-image: url(${this.state.dataURI});`
-        }).then(
-          function() { console.log('success') },
-          function(err) { console.log('failure', err) }
-        )
+        copy(removeLeadingWhitespace`.
+            . width: ${this.state.width}px;
+            . height: ${this.state.height}px;
+            . background-repeat: no-repeat;
+            . background-image: url(${this.state.dataURI});`)
+        this.setState({
+            isFinished: true
+        })
+        this.startTimer()
     }
 
     handleHTMLClick() {
-        clipboard.copy('<img width="' + this.state.width + '" height="' + this.state.height + '" title="" alt="" src="' + this.state.dataURI + '">').then(
-          function() { console.log('success') },
-          function(err) { console.log('failure', err) }
-        )
+        copy('<img width="' + this.state.width + '" height="' + this.state.height + '" title="" alt="" src="' + this.state.dataURI + '">')
+        this.setState({
+            isFinished: true
+        })
+        this.startTimer()
     }
 
     render() {
         return (
             <div className={styles.converter}>
+                <div className={styles.finished + ' ' + (this.state.isFinished ? styles.finishedVisible : '')}>Copied to clipboard!</div>
                 <Dropzone onDrop={this.handleDrop} className={styles.dropzone} multiple={false}>
                     <h1 className={styles.converterHeading}>Drop your file here</h1>
-                    <p className={styles.converterText}>Or click to select one. No files are uploaded. </p>
+                    <p className={styles.converterText}>Or click to select one. No files are sent to the server. </p>
                     {this.state.files.length > 0 && this.state.files.map((file, i) =>
                         <img className={styles.droppedImg} key={i} src={file.preview} />
                     )}

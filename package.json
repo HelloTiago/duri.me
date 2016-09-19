@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production webpack -p",
     "postbuild": "npm run copy",
     "clean": "rimraf build",
-    "copy": "cp -r public/* build && surge ./build --domain v2.duri.me"
+    "copy": "cp -r public/* build && surge ./build --domain duri.me"
   },
   "author": "Tiago Duarte <hello@tiagoduarte.com> (http://tiagoduarte.com/)",
   "repository": {
@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "clipboard-js": "^0.2.0",
+    "copy-to-clipboard": "^3.0.5",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-dropzone": "^3.5.1",

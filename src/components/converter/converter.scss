@@ -37,12 +37,19 @@
   margin: 30px auto 0;
 }
 
+.droppedImg {
+  width: 90%;
+  border-radius: 2px;
+  height: 200px;
+  object-fit: contain;
+}
+
 .buttonGroup {
   display: flex;
   margin: 40px auto 0;
 }
 
-button {
+.button {
   display: block;
   -webkit-appearance: none;
   background-color: #1fb6ff;
@@ -62,4 +69,39 @@ button {
     border-radius: 0 4px 4px 0;
     border-left: 1px solid #fff;
   }
+}
+
+.finished {
+  padding: 10px 0;
+  font-size: 14px;
+  border-radius: 4px;
+  text-align: center;
+  width: 180px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: #5bb35b;
+  opacity: 0;
+  transition: opacity 150ms ease-in;
+}
+
+.finishedVisible {
+  opacity: 1;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
