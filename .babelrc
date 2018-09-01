@@ -1,8 +1,14 @@
 {
-    "presets": ["es2015", "react"],
-    "env": {
-        "development": {
-            "presets": ["react-hmre"]
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "components": "./components"
         }
-    }
+      }
+    ]
+  ]
 }

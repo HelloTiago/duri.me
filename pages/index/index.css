@@ -1,3 +1,31 @@
+:global body {
+  background-color: #fff;
+  font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+}
+
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('/static/fonts/avenir-next-medium.eot');
+  src: url('/static/fonts/avenir-next-medium.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/avenir-next-medium.woff') format('woff'),
+       url('/static/fonts/avenir-next-medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('/static/fonts/avenir-next-regular.eot');
+  src: url('/static/fonts/avenir-next-regular.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/avenir-next-regular.woff') format('woff'),
+       url('/static/fonts/avenir-next-regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .converter {
   position: absolute;
   top: 50%;
@@ -59,16 +87,16 @@
   font-size: 16px;
   color: #fff;
   cursor: pointer;
+}
 
-  &:first-child {
-    border-radius: 4px 0 0 4px;
-    border-right: 1px solid #fff;
-  }
+.button:first-child {
+  border-radius: 4px 0 0 4px;
+  border-right: 1px solid #fff;
+}
 
-  &:last-child {
-    border-radius: 0 4px 4px 0;
-    border-left: 1px solid #fff;
-  }
+.button:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid #fff;
 }
 
 .finished {
@@ -86,22 +114,4 @@
 
 .finishedVisible {
   opacity: 1;
-}
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
 }
