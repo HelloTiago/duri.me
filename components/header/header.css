@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.logo {
+  color: #4A90E2;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.navLink {
+  color: #848C97;
+  opacity: 0.6;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 100ms ease-in;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
+
+.navLink:not(:last-child) {
+  margin-right: 50px;
+}
