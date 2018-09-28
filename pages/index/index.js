@@ -99,7 +99,7 @@ class Index extends React.Component {
   render() {
     return (
       <div className="app">
-        <Header title="Home" />
+        <Header title="Duri.me - A beautifully simple image-to-DataURI converter" />
 
         <div className={css.converter}>
           <div className={css.finished + ' ' + (this.state.isFinished ? css.finishedVisible : '')}>
