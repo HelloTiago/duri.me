@@ -149,8 +149,8 @@ class Help extends React.Component {
             app with no backend.
           </p>
           <p>
-            And finally this current interation, last updated in 2018, is a port to a server-side
-            rendered React app powered by Next.js.
+            And finally this current interation, last updated in 2018, is a port to a
+            statically-exported React app powered by Next.js
           </p>
         </div>
       </div>
