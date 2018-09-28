@@ -1,8 +1,25 @@
 :global body {
   background-color: #fff;
   font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-size: 17px;
+  color: #111111;
 }
 
+:global .app {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+:global a {
+  color: #4A90E2;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 100ms ease-in;
+}
+
+:global a:hover {
+  color: #0d8eff;
+}
 
 @font-face {
   font-family: 'Avenir Next';
@@ -12,6 +29,7 @@
        url('/static/fonts/avenir-next-medium.ttf') format('truetype');
   font-weight: 500;
 }
+
 @font-face {
   font-family: 'Avenir Next';
   src: url('/static/fonts/avenir-next-regular.eot');
@@ -19,11 +37,6 @@
        url('/static/fonts/avenir-next-regular.woff') format('woff'),
        url('/static/fonts/avenir-next-regular.ttf') format('truetype');
   font-weight: 400;
-}
-
-.app {
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .converter {
@@ -57,6 +70,7 @@
 .converterText {
   color: #8492a6;
   text-align: center;
+  font-size: 16px;
 }
 
 .dropImg {

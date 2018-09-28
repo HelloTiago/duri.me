@@ -1,5 +1,5 @@
 {
-  "name": "create-next-example-app",
+  "name": "duri.me",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -7,14 +7,14 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@zeit/next-css": "^0.2.0",
+    "@zeit/next-css": "^1.0.1",
     "babel-plugin-module-resolver": "^3.1.1",
     "copy-to-clipboard": "^3.0.8",
     "eslint-import-resolver-babel-module": "^4.0.0",
-    "next": "^6.1.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-dropzone": "^5.0.1"
+    "next": "^7.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-dropzone": "^5.1.1"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
