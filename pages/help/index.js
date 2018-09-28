@@ -99,7 +99,7 @@ class Help extends React.Component {
   render() {
     return (
       <div className="app">
-        <Header title="Duri.me - Help" />
+        <Header title="Duri.me - Help - A beautifully simple image-to-DataURI converter" />
 
         <div className={css.help}>
           <h2>What is a DataURI and when should I use one?</h2>
