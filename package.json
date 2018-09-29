@@ -15,7 +15,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-dropzone": "^5.1.1"
+    "react-dropzone": "^5.1.1",
+    "react-ga": "^2.5.3"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
