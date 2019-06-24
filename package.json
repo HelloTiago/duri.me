@@ -16,7 +16,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.1.5",
-    "react-ga": "^2.5.3"
+    "react-ga": "^2.6.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
