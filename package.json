@@ -15,7 +15,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.5.2",
     "react-dom": "^16.8.6",
-    "react-dropzone": "^10.1.5",
+    "react-dropzone": "^10.1.7",
     "react-ga": "^2.5.3"
   },
   "devDependencies": {
