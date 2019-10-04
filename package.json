@@ -13,7 +13,7 @@
     "eslint-import-resolver-babel-module": "^4.0.0",
     "next": "^8.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.5.2",
+    "react": "^16.10.2",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.1.5",
     "react-ga": "^2.5.3"
