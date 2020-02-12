@@ -9,7 +9,7 @@ const Dropzone = dynamic(import('react-dropzone'), {
   loading: () => <span />,
 });
 
-import css from './index.css';
+import css from './index.module.css';
 
 class Index extends React.Component {
   state = {
@@ -18,6 +18,7 @@ class Index extends React.Component {
     height: null,
     files: [],
     isFinished: false,
+    preview: null,
   };
 
   handleDrop = files => {
@@ -34,6 +35,7 @@ class Index extends React.Component {
           var img = new Image();
           img.onload = () => {
             this.setState({
+              preview: URL.createObjectURL(file),
               dataURI: reader.result,
               width: img.width,
               height: img.height,
@@ -105,17 +107,22 @@ class Index extends React.Component {
           <div className={css.finished + ' ' + (this.state.isFinished ? css.finishedVisible : '')}>
             Copied to clipboard!
           </div>
-          <Dropzone onDrop={this.handleDrop} className={css.dropzone} multiple={false}>
-            <h1 className={css.converterHeading}>Drop your file here</h1>
-            <p className={css.converterText}>
-              Or click to select one. No files are sent to the server.
-            </p>
-            {this.state.files.length > 0 &&
-              this.state.files.map((file, i) => (
-                <img className={css.droppedImg} key={i} src={file.preview} />
-              ))}
-            {this.state.files.length <= 0 && (
-              <img className={css.dropImg} src="/static/drop.svg" alt="Drop your image here" />
+          <Dropzone onDrop={this.handleDrop} multiple={false}>
+            {({getRootProps, getInputProps}) => (
+              <div className={css.dropzone} {...getRootProps()}>
+                <input {...getInputProps()} />
+                <h1 className={css.converterHeading}>Drop your file here</h1>
+                <p className={css.converterText}>
+                  Or click to select one. No files are sent to the server.
+                </p>
+                {this.state.files.length > 0 &&
+                  this.state.files.map((file, i) => (
+                    <img className={css.droppedImg} key={i} src={this.state.preview} />
+                  ))}
+                {this.state.files.length <= 0 && (
+                  <img className={css.dropImg} src="/static/drop.svg" alt="Drop your image here" />
+                )}
+              </div>
             )}
           </Dropzone>
           {this.state.dataURI && (

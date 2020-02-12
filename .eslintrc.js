@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    "browser": true,
+  },
   settings: {
     'import/resolver': {
       'babel-module': {},

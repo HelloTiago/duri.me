@@ -3,12 +3,12 @@ import NextHead from 'next/head';
 import Link from 'next/link';
 import { string } from 'prop-types';
 
-import css from './header.css';
+import css from './header.module.css';
 
 const defaultDescription = "A simple tool designed to help you convert images to dataURI's.";
 const defaultOGURL = 'https://duri.me';
 
-const Head = props => (
+const Head = (props) => (
   <header className={css.header}>
     <NextHead>
       <meta charSet="UTF-8" />
